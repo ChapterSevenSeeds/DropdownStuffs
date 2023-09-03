@@ -130,6 +130,7 @@ export default function DropdownPopper<T extends SelectOption>(props: { parent?:
 
     return (
         <DropdownRoot
+            data-cy="dropdown-root"
             style={{
                 position: "fixed",
                 left: props.parent.offsetLeft,
@@ -139,7 +140,7 @@ export default function DropdownPopper<T extends SelectOption>(props: { parent?:
             }}
         >
             <SearchRoot onClick={searchBoxClick}>
-                <SearchBox autoFocus value={searchValue} onChange={searchValueChange} onKeyDown={searchBoxKeyDown} />
+                <SearchBox data-cy="search-box" autoFocus value={searchValue} onChange={searchValueChange} onKeyDown={searchBoxKeyDown} />
             </SearchRoot>
             {filteredOptions.map(option => {
                 const selected = props.selectedValue === option.value;
@@ -147,6 +148,7 @@ export default function DropdownPopper<T extends SelectOption>(props: { parent?:
 
                 return (
                     <OptionRoot
+                        id={`option-${option.value}`}
                         focused={focused}
                         key={option.value}
                         onClick={() => props.valueChanged(option.value)}

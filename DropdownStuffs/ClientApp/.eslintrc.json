@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "plugin:cypress/recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": [
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+      ]
+    }
+  },
+  "parser": "@babel/eslint-parser",
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}

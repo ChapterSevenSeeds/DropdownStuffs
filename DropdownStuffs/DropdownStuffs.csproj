@@ -20,9 +20,17 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\__snapshots__\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\__snapshots__\**" />
+    <EmbeddedResource Remove="ClientApp\src\__snapshots__\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\__snapshots__\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\__snapshots__\DropdownSelect.spec.tsx.snap" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

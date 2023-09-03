@@ -56,6 +56,7 @@ export default function DropdownSelect<T extends SelectOption>(props: SelectProp
     return (
         <>
             <Root
+                data-cy="select-root"
                 ref={rootRef}
                 onClick={rootClick}
             >
