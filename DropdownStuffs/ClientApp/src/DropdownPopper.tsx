@@ -65,6 +65,7 @@ color: white;
 `}
 `;
 
+// Borrowed from Stackoverflow.
 function isInView(element?: HTMLElement | null) {
     if (!element) return true;
 
